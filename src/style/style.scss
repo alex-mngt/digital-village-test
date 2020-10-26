@@ -1,0 +1,242 @@
+@import "./variables.scss";
+
+$grid-columns: 10;
+
+@import "bootstrap";
+
+/**************************/
+/**** GENERAL STYLING *****/
+/**************************/
+
+html {
+  font-size: 18px;
+  & > body {
+    font-family: "Poppins", sans-serif;
+    & > header {
+      & > .navbar {
+        background-color: $digital-black;
+
+        & > #brand-logo {
+          font-weight: 600;
+        }
+
+        & > #navbarNav {
+          & > ul {
+            & > li {
+              & > p {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    & > main {
+      & > #main-title {
+        font-weight: 600;
+      }
+
+      & > .search-component {
+        & > #search-button {
+          color: $digital-white;
+          background-color: $digital-black;
+        }
+      }
+
+      & > .movies {
+        & > .row {
+          & > .movie {
+            & > .poster-more-infos {
+              & > img {
+                object-fit: cover;
+              }
+            }
+
+            & > .movie-main-infos {
+              background-color: $digital-dark;
+
+              & > .movie-title,
+              & > .movie-year {
+                color: $digital-white;
+              }
+
+              & > .movie-title {
+                font-weight: 600;
+              }
+
+              & > .more-infos-button {
+                background-color: $digital-yellow;
+                color: $digital-dark;
+                font-weight: 600;
+              }
+            }
+          }
+        }
+      }
+      #load-more-button {
+        background-color: $digital-yellow;
+        color: $digital-dark;
+        font-weight: 600;
+      }
+    }
+
+    & > #movie-modal {
+      & > .modal-dialog {
+        & > .modal-content {
+          & > .modal-body {
+            & > p {
+              & > .legend {
+                font-weight: 600;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    & > footer {
+      background-color: $digital-dark;
+      color: $digital-white;
+    }
+  }
+}
+
+/***********************/
+/**** BOOTSTRAP BP *****/
+/***********************/
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  html {
+    font-size: 15px;
+
+    & > body {
+      & > header {
+        & > .navbar {
+          & > #navbarNav {
+            & > ul {
+              & > li {
+                & > p {
+                  transition: transform 0.1s ease-out;
+                  &:hover {
+                    transform: scale(1.05);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      & > main {
+        padding: 0 100px !important;
+
+        & > .movies {
+          & > .row {
+            & > .movie {
+              transform: translateX(-10px);
+              opacity: 0;
+              animation: appearing 1s ease-out forwards;
+              & > .poster-more-infos {
+                position: relative;
+                overflow: hidden;
+
+                & > img {
+                  height: 20vw;
+                }
+
+                & > img:hover {
+                  & + .movie-more-infos {
+                    transform: translateX(0);
+                  }
+                }
+
+                & > .movie-more-infos {
+                  width: 100%;
+                  top: 0;
+                  transform: translateX(100%);
+                  transition: transform 0.2s ease-out;
+                  background-color: $digital-less-dark;
+                  color: $digital-white;
+
+                  &:hover {
+                    transform: translateX(0);
+                  }
+
+                  & > .infos-wrapper {
+                    & > .type {
+                      font-weight: 600;
+                      font-size: 1.3rem;
+                    }
+
+                    & > p {
+                      & > .legend {
+                        font-weight: 600;
+                      }
+                    }
+
+                    & > .rating {
+                      & > .legend {
+                        font-weight: 600;
+                      }
+                      & > svg {
+                        height: 18px;
+                        transform: translateY(-2px);
+                      }
+                    }
+                  }
+
+                  & > .more-infos-button {
+                    background-color: $digital-yellow;
+                    color: $digital-black;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: transform 0.2s ease-out;
+                    &:hover {
+                      transform: scale(1.05);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        & > #load-more-button {
+          transition: transform 0.2s ease-out;
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+
+/*********************/
+/**** ANIMATIONS *****/
+/*********************/
+
+@keyframes appearing {
+  from {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
