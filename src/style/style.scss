@@ -47,6 +47,9 @@ html {
       & > .movies {
         & > .row {
           & > .movie {
+            transform: translateX(-10px);
+            opacity: 0;
+            animation: appearing 1s ease-out forwards;
             & > .poster-more-infos {
               & > img {
                 object-fit: cover;
@@ -140,12 +143,19 @@ html {
       & > main {
         padding: 0 100px !important;
 
+        & > .search-component {
+          & > #search-button {
+            transition: transform 0.2s ease-out;
+
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+        }
+
         & > .movies {
           & > .row {
             & > .movie {
-              transform: translateX(-10px);
-              opacity: 0;
-              animation: appearing 1s ease-out forwards;
               & > .poster-more-infos {
                 position: relative;
                 overflow: hidden;

@@ -1,5 +1,6 @@
 # Test Digital Village
 
+Imposed technologies : Bootstrap, Jquery
 Follow these instructions to make the Digital Villages test website up and running.
 
 ### Install dependencies
