@@ -2,14 +2,6 @@
 
 Follow these instructions to make the Digital Villages test website up and running.
 
-### Install Webpack CLI globally
-
-In order to generate the bundle you must install Webpack CLI :
-
-```
-npm i -g webpack-cli
-```
-
 ### Install dependencies
 
 Install the remaining dependencies including Jquery, Bootstrap etc :
